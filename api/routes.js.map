@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "routes.js",
+  "sourceRoot": "",
+  "sources": [
+    "../api-src/routes.ts"
+  ],
+  "names": [],
+  "mappings": ";;AACA,uEAA8D;AAE9D;IAII,YAAY,GAAgB;QAF5B,oBAAe,GAAG,IAAI,2BAAe,EAAE,CAAC;QAGpC,GAAG,CAAC,KAAK,CAAC,mBAAmB,CAAC,CAAC,GAAG,CAAC,IAAI,CAAC,eAAe,CAAC,cAAc,CAAC,CAAC;IAC5E,CAAC;CACJ;AAPD,yBAOC"
+}
