@@ -48,7 +48,7 @@
       height: 1.3em;
       border: solid 1px;
       border-radius: 10px;
-      overflow: auto;
+      overflow: hidden;
       clear: both;
     }
 
@@ -93,6 +93,10 @@
     .input2 {
       float: right;
       border-color: lightgreen;
+    }
+
+    .background-color-green {
+      background-color: green;
     }
   }
 }

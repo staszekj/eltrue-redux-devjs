@@ -5,37 +5,27 @@ import TwoBars from 'app/components/two-bars'
 import PropTypes from "prop-types";
 
 const MainApp = props => {
-  const {valueOne, valueTwo, valueResult} = props;
+  const {valueOne, valueTwo, result} = props;
   return (
     <div className="main-app">
       <div className="header">
         <span className="header-value-1">{valueOne}</span>&nbsp;+&nbsp;<span
         className="header-value-2">{valueTwo}</span>&nbsp;=&nbsp;
-        <span className="header-value-result">{valueResult}</span>
+        <span className="header-value-result">{result}</span>
       </div>
       <div className="body">
-        <div className="left-panel">
-          <TwoBars {...props}/>
-        </div>
-        <div className="right-panel">
-          <TwoInputs/>
-        </div>
+        <TwoBars {...props}/>
+        <TwoInputs/>
       </div>
 
     </div>
   )
 };
 
-MainApp.defaultProps = {
-  valueOne: 50,
-  valueTwo: 70,
-  valueResult: 120
-};
-
 MainApp.propTypes = {
-  valueOne: PropTypes.number,
-  valueTwo: PropTypes.number,
-  valueResult: PropTypes.number
+  valueOne: PropTypes.number.isRequired,
+  valueTwo: PropTypes.number.isRequired,
+  result: PropTypes.number.isRequired
 };
 
 export default MainApp

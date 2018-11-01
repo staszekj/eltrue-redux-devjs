@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import MainAppCmp from 'app/components/main-app'
+import {selectResultAsNumber, selectValueOneAsNumber, selectValueTwoAsNumber} from 'app/selectors'
 
 const MainApp = (props) => {
   return (<MainAppCmp {...props} />)
@@ -9,7 +10,9 @@ const MainApp = (props) => {
 
 const mapStateToProps = state => (
   {
-    test: state.test
+    valueOne: selectValueOneAsNumber(state),
+    valueTwo: selectValueTwoAsNumber(state),
+    result: selectResultAsNumber(state),
   }
 );
 

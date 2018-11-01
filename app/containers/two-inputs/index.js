@@ -1,13 +1,13 @@
 import {connect} from 'react-redux'
 import TwoInputs from "app/components/two-inputs";
-import {twoInputsChange} from 'app/redux/two-inputs'
-import {selectTwoInputsValueOne, selectTwoInputsValueTwo, selectTwoInputsResult} from 'app/selectors'
+import {twoInputsChange, selectValueOne, selectValueTwo} from 'app/redux/two-inputs'
+import {isResultMod10} from 'app/selectors'
 
 const mapStateToProps = state => {
   return {
-    valueOne: selectTwoInputsValueOne(state),
-    valueTwo: selectTwoInputsValueTwo(state),
-    result: selectTwoInputsResult(state)
+    valueOne: selectValueOne(state),
+    valueTwo: selectValueTwo(state),
+    isResultMod10: isResultMod10(state)
   }
 };
 
