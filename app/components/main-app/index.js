@@ -4,11 +4,13 @@ import TwoInputs from 'app/containers/two-inputs'
 import TwoBars from 'app/components/two-bars'
 import PropTypes from "prop-types";
 
+const formatValue = value => isNaN(value) ? '_' : value + '';
+
 const MainApp = props => {
   const {valueOne, valueTwo, result} = props;
-  const valueOneAsString = valueOne + '';
-  const valueTwoAsString = valueTwo + '';
-  const resultAsString = result + '';
+  const valueOneAsString = formatValue(valueOne);
+  const valueTwoAsString = formatValue(valueTwo);
+  const resultAsString = formatValue(result);
 
   return (
     <div className="main-app">

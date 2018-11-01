@@ -9,11 +9,15 @@ const BarContent = ({barOneWidth, barTwoWidth, leftClickHandler, rightClickHandl
   if (isBarTooBig(barOneWidth, barTwoWidth)) {
     return '';
   }
+
+  const barOneLabel = barOneWidth ? barOneWidth + '' : '';
+  const barTwoLabel = barTwoWidth ? barTwoWidth + '' : '';
+
   return (<div className="values">
     <div className="value-container value1" style={{width: barOneWidth}} onClick={leftClickHandler}><span
-      className="text">{barOneWidth}</span></div>
+      className="text">{barOneLabel}</span></div>
     <div className="value-container value2" style={{width: barTwoWidth}} onClick={rightClickHandler}><span
-      className="text">{barTwoWidth}</span></div>
+      className="text">{barTwoLabel}</span></div>
   </div>)
 };
 BarContent.propTypes = {
