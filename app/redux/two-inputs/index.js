@@ -1,28 +1,26 @@
 export const TWO_INPUTS_CHANGE = 'TWO_INPUTS/change';
 
+const convertToString = val => val + '';
+
 // Action Creators
 export const twoInputsChange = (valueOne, valueTwo) =>
   ({
     type: TWO_INPUTS_CHANGE,
     payload: {
-      valueOne,
-      valueTwo,
-      result: parseInt(valueOne) + parseInt(valueTwo) + ''
+      valueOne: convertToString(valueOne),
+      valueTwo: convertToString(valueTwo)
     }
   });
 
 // Selectors
-export const selectTwoInputs = state => state.twoInputs;
-export const selectValueOne = state => selectTwoInputs(state).valueOne;
-export const selectValueTwo = state => selectTwoInputs(state).valueTwo;
-export const selectResult = state => selectTwoInputs(state).result;
+export const selectValueOne = state => state.twoInputs.valueOne;
+export const selectValueTwo = state => state.twoInputs.valueTwo;
 
 
 // Int state
 const initState = {
   valueOne: '60',
-  valueTwo: '40',
-  result: '100'
+  valueTwo: '40'
 };
 
 // Reducer
@@ -32,8 +30,7 @@ export default (state = initState, action) => {
       return {
         ...state,
         valueOne: action.payload.valueOne,
-        valueTwo: action.payload.valueTwo,
-        result: action.payload.result
+        valueTwo: action.payload.valueTwo
       };
     default:
       return state;

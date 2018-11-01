@@ -6,12 +6,16 @@ import PropTypes from "prop-types";
 
 const MainApp = props => {
   const {valueOne, valueTwo, result} = props;
+  const valueOneAsString = valueOne + '';
+  const valueTwoAsString = valueTwo + '';
+  const resultAsString = result + '';
+
   return (
     <div className="main-app">
       <div className="header">
-        <span className="header-value-1">{valueOne}</span>&nbsp;+&nbsp;<span
-        className="header-value-2">{valueTwo}</span>&nbsp;=&nbsp;
-        <span className="header-value-result">{result}</span>
+        <span className="header-value-1">{valueOneAsString}</span>&nbsp;+&nbsp;<span
+        className="header-value-2">{valueTwoAsString}</span>&nbsp;=&nbsp;
+        <span className="header-value-result">{resultAsString}</span>
       </div>
       <div className="body">
         <TwoBars {...props}/>

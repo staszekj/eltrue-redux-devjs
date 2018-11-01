@@ -1,12 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import MainAppCmp from 'app/components/main-app'
+import MainApp from 'app/components/main-app'
+import {twoBarsClick} from 'app/actions'
 import {selectResultAsNumber, selectValueOneAsNumber, selectValueTwoAsNumber} from 'app/selectors'
-
-const MainApp = (props) => {
-  return (<MainAppCmp {...props} />)
-
-};
 
 const mapStateToProps = state => (
   {
@@ -18,7 +14,9 @@ const mapStateToProps = state => (
 
 const mapDispatchToProps = dispatch => (
   {
-    actions: {}
+    actions: {
+      twoBarsClick: (barName) => dispatch(twoBarsClick(barName))
+    }
   }
 );
 
