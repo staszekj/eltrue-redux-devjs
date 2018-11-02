@@ -10,8 +10,8 @@ const BarContent = ({barOneWidth, barTwoWidth, leftClickHandler, rightClickHandl
     return '';
   }
 
-  const barOneLabel = barOneWidth ? barOneWidth + '' : '';
-  const barTwoLabel = barTwoWidth ? barTwoWidth + '' : '';
+  const barOneLabel = barOneWidth !== 0 ? barOneWidth + '' : '';
+  const barTwoLabel = barTwoWidth !== 0 ? barTwoWidth + '' : '';
 
   return (<div className="values">
     <div className="value-container value1" style={{width: barOneWidth}} onClick={leftClickHandler}><span
@@ -39,8 +39,8 @@ EmptyContent.propTypes = {
 };
 
 const TwoBars = ({valueOne, valueTwo, actions}) => {
-  const barOneWidth = isNaN(valueOne) ? 0 : valueOne;
-  const barTwoWidth = isNaN(valueTwo) ? 0 : valueTwo;
+  const barOneWidth = isNaN(valueOne) || valueOne < 0 ? 0 : valueOne;
+  const barTwoWidth = isNaN(valueTwo) || valueTwo < 0 ? 0 : valueTwo;
 
   const leftClickHandler = () => {
     actions.twoBarsClick(LEFT_BAR)
