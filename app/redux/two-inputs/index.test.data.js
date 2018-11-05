@@ -1,6 +1,4 @@
-const twoInputs = {
+export default {
   valueOne: '123',
   valueTwo: '40'
 };
-
-export default twoInputs

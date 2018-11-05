@@ -18,7 +18,7 @@ export const selectValueTwo = state => state.twoInputs.valueTwo;
 
 
 // Int state
-const initState = {
+export const initState = {
   valueOne: '60',
   valueTwo: '40'
 };

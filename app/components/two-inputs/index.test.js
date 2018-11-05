@@ -4,7 +4,7 @@ import TwoInputs from 'app/components/two-inputs';
 import * as twoInputsTestData from 'app/components/two-inputs/index.test.data'
 import {actions} from "app/components/two-inputs/index.test.data";
 
-describe('TwoBars component', function () {
+describe('TwoInputs component', function () {
   it('should be rendered', function () {
     //when
     const twoInputs = mount(<TwoInputs {...twoInputsTestData}/>);
