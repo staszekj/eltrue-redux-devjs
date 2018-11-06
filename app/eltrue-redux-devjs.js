@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MainApp from "app/containers/main-app";
-import store from 'app/redux'
+import {create} from 'app/redux'
 import {Provider} from 'react-redux';
 
+const newStore = create();
+
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={newStore}>
     <MainApp/>
   </Provider>,
 

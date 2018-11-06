@@ -4,6 +4,24 @@ import TwoInputs from 'app/components/two-inputs';
 import * as twoInputsTestData from 'app/components/two-inputs/index.test.data'
 import {actions} from "app/components/two-inputs/index.test.data";
 
+export const input1Click = (twoInputs, value) => {
+  const input1 = twoInputs.find('input.input1');
+  input1.simulate('change', {
+    target: {
+      value: value
+    }
+  });
+};
+
+export const input2Click = (twoInputs, value) => {
+  const input2 = twoInputs.find('input.input2');
+  input2.simulate('change', {
+    target: {
+      value: value
+    }
+  });
+};
+
 describe('TwoInputs component', function () {
   it('should be rendered', function () {
     //when
@@ -22,16 +40,11 @@ describe('TwoInputs component', function () {
   it('should handle input1 change', function () {
     //given
     const twoInputs = mount(<TwoInputs {...twoInputsTestData}/>);
-    const input1 = twoInputs.find('input.input1');
     const input2 = twoInputs.find('input.input2');
     expect(input2.prop('value')).toEqual('40');
 
     //when
-    input1.simulate('change', {
-      target: {
-        value: "105"
-      }
-    });
+    input1Click(twoInputs, "105");
 
     //then
     expect(actions.twoInputsChange).toHaveBeenCalledWith('105', '40')
@@ -41,15 +54,10 @@ describe('TwoInputs component', function () {
     //given
     const twoInputs = mount(<TwoInputs {...twoInputsTestData}/>);
     const input1 = twoInputs.find('input.input1');
-    const input2 = twoInputs.find('input.input2');
     expect(input1.prop('value')).toEqual('123');
 
     //when
-    input2.simulate('change', {
-      target: {
-        value: "200"
-      }
-    });
+    input2Click(twoInputs, "200");
 
     //then
     expect(actions.twoInputsChange).toHaveBeenCalledWith('123', '200')
