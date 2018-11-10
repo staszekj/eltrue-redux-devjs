@@ -1,4 +1,4 @@
-import {selectValueOne, selectValueTwo, selectResult} from "app/redux/two-inputs";
+import {selectValueOne, selectValueTwo} from "app/redux/two-inputs";
 
 const parseValue = valueAsStr => parseInt(valueAsStr);
 const calculateResult = (valueOneStr, valueTwoStr) => parseInt(valueOneStr) + parseInt(valueTwoStr);

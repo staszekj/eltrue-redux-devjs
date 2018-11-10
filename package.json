@@ -7,7 +7,7 @@
     "dev:server": "nodemon ./api/index.js",
     "dev": "webpack-dev-server  --progress --colors",
     "dev:watch": "webpack --watch --progress --profile --colors",
-    "lint": "eslint --ext js --ext jsx src || exit 0",
+    "lint": "eslint --ext js --ext jsx app",
     "test": "export NODE_ENV=test && jest",
     "test:watch": "export NODE_ENV=test && jest --watchAll",
     "build": "tsc && webpack --config webpack.production.config.js --progress --profile --colors",

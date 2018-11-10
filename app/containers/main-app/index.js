@@ -1,4 +1,3 @@
-import React from 'react';
 import {connect} from 'react-redux';
 import MainApp from 'app/components/main-app'
 import {twoBarsClick} from 'app/actions'
