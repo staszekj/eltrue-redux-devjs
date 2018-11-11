@@ -3,7 +3,7 @@ import {mount} from 'enzyme';
 import TwoInputs from 'app/components/two-inputs';
 import * as twoInputsComponentTestData from 'app/components/two-inputs/index.test.data'
 
-export const input1Click = (twoInputs, value) => {
+export const input1Change = (twoInputs, value) => {
   const input1 = twoInputs.find('input.input1');
   input1.simulate('change', {
     target: {
@@ -12,7 +12,7 @@ export const input1Click = (twoInputs, value) => {
   });
 };
 
-export const input2Click = (twoInputs, value) => {
+export const input2Change = (twoInputs, value) => {
   const input2 = twoInputs.find('input.input2');
   input2.simulate('change', {
     target: {
@@ -59,7 +59,7 @@ describe('TwoInputs component', function () {
     expect(input2.prop('value')).toEqual('40');
 
     //when
-    input1Click(twoInputs, "105");
+    input1Change(twoInputs, "105");
 
     //then
     expect(twoInputsChangeSpy).toHaveBeenCalledWith('105', '40')
@@ -80,7 +80,7 @@ describe('TwoInputs component', function () {
     expect(input1.prop('value')).toEqual('123');
 
     //when
-    input2Click(twoInputs, "200");
+    input2Change(twoInputs, "200");
 
     //then
     expect(twoInputsChangeSpy).toHaveBeenCalledWith('123', '200')

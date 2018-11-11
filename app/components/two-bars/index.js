@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import {LEFT_BAR, RIGHT_BAR} from "app/actions";
 
-const MAX_VALUE = 300;
+export const MAX_VALUE = 300;
+export const TOO_BIG_DATA_MESSAGE = `Sum bigger than ${MAX_VALUE} is not supported.`;
+
 const isBarTooBig = (barOneWidth, barTwoWidth) => barOneWidth + barTwoWidth > MAX_VALUE;
 
 const BarContent = ({barOneWidth, barTwoWidth, leftClickHandler, rightClickHandler}) => {
@@ -31,7 +33,7 @@ const EmptyContent = ({barOneWidth, barTwoWidth}) => {
   if (!isBarTooBig(barOneWidth, barTwoWidth)) {
     return '';
   }
-  return (<span>{`Sum bigger than ${MAX_VALUE} is not supported.`}</span>)
+  return (<span>{TOO_BIG_DATA_MESSAGE}</span>)
 };
 EmptyContent.propTypes = {
   barOneWidth: PropTypes.number.isRequired,

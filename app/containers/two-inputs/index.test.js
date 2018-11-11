@@ -4,7 +4,7 @@ import reduxTestData from './index.test.data'
 import {mount} from 'enzyme'
 import {Provider} from 'react-redux'
 import TwoInputs from "app/containers/two-inputs/index";
-import {input1Click} from "app/components/two-inputs/index.test"
+import {input1Change} from "app/components/two-inputs/index.test"
 
 describe('TwoInputs container', function () {
   it('should be rendered', function () {
@@ -29,7 +29,7 @@ describe('TwoInputs container', function () {
     );
 
     //when
-    input1Click(wrapper, '22');
+    input1Change(wrapper, '22');
 
     //then
     expect(wrapper.find('input.input1').prop('value')).toBe('22');

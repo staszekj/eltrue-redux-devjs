@@ -1,6 +1,6 @@
 import React from 'react'
 import {mount} from 'enzyme'
-import TwoBars from 'app/components/two-bars/'
+import TwoBars, {MAX_VALUE, TOO_BIG_DATA_MESSAGE} from 'app/components/two-bars/'
 import * as twoBarsComponentData from 'app/components/two-bars/index.test.data'
 import {LEFT_BAR, RIGHT_BAR} from "app/actions";
 
@@ -65,5 +65,20 @@ describe('TwoBars component', function () {
     //then
     expect(twoBarsClickSpy).toHaveBeenCalledWith(RIGHT_BAR);
     expect(twoBarsClickSpy).not.toHaveBeenCalledWith(LEFT_BAR);
+  })
+
+  it('should handle bar values are too big', function () {
+    //when
+    const twoBarsClickSpy = jest.fn();
+    const wrapper = mount(
+      <TwoBars
+        valueOne={MAX_VALUE + 1}
+        valueTwo={MAX_VALUE + 1}
+        actions={{twoBarsClick: twoBarsClickSpy}}
+      />
+    );
+
+    //then
+    expect(wrapper.find('EmptyContent').text()).toBe(TOO_BIG_DATA_MESSAGE);
   })
 });

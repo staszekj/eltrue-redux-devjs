@@ -35,7 +35,10 @@ const MainApp = props => {
 MainApp.propTypes = {
   valueOne: PropTypes.number.isRequired,
   valueTwo: PropTypes.number.isRequired,
-  result: PropTypes.number.isRequired
+  result: PropTypes.number.isRequired,
+  actions: PropTypes.shape({
+    twoBarsClick: PropTypes.func.isRequired
+  }).isRequired
 };
 
 export default MainApp
