@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const formatValue = value => isNaN(value) ? '_' : value + '';
 
 const MainApp = props => {
-  const {valueOne, valueTwo, result} = props;
+  const {valueOne, valueTwo, result, actions} = props;
   const valueOneAsString = formatValue(valueOne);
   const valueTwoAsString = formatValue(valueTwo);
   const resultAsString = formatValue(result);
@@ -20,7 +20,11 @@ const MainApp = props => {
         <span className="header-value-result">{resultAsString}</span>
       </div>
       <div className="body">
-        <TwoBars {...props}/>
+        <TwoBars
+          valueOne={valueOne}
+          valueTwo={valueTwo}
+          actions={actions}
+        />
         <TwoInputs/>
       </div>
 

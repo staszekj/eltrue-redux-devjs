@@ -67,7 +67,7 @@ TwoBars.propTypes = {
   valueTwo: PropTypes.number.isRequired,
   actions: PropTypes.shape({
     twoBarsClick: PropTypes.func.isRequired
-  })
+  }).isRequired
 };
 
 export default TwoBars

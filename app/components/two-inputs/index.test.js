@@ -1,8 +1,7 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import TwoInputs from 'app/components/two-inputs';
-import * as twoInputsTestData from 'app/components/two-inputs/index.test.data'
-import {actions} from "app/components/two-inputs/index.test.data";
+import * as twoInputsComponentTestData from 'app/components/two-inputs/index.test.data'
 
 export const input1Click = (twoInputs, value) => {
   const input1 = twoInputs.find('input.input1');
@@ -25,7 +24,15 @@ export const input2Click = (twoInputs, value) => {
 describe('TwoInputs component', function () {
   it('should be rendered', function () {
     //when
-    const twoInputs = mount(<TwoInputs {...twoInputsTestData}/>);
+    const twoInputsChangeSpy = jest.fn();
+    const twoInputs = mount(
+      <TwoInputs
+        valueOne={twoInputsComponentTestData.valueOne}
+        valueTwo={twoInputsComponentTestData.valueTwo}
+        isResultMod10={twoInputsComponentTestData.isResultMod10}
+        actions={{twoInputsChange: twoInputsChangeSpy}}
+      />
+    );
 
     //then
     const input1 = twoInputs.find('input.input1');
@@ -39,7 +46,15 @@ describe('TwoInputs component', function () {
 
   it('should handle input1 change', function () {
     //given
-    const twoInputs = mount(<TwoInputs {...twoInputsTestData}/>);
+    const twoInputsChangeSpy = jest.fn();
+    const twoInputs = mount(
+      <TwoInputs
+        valueOne={twoInputsComponentTestData.valueOne}
+        valueTwo={twoInputsComponentTestData.valueTwo}
+        isResultMod10={twoInputsComponentTestData.isResultMod10}
+        actions={{twoInputsChange: twoInputsChangeSpy}}
+      />
+    );
     const input2 = twoInputs.find('input.input2');
     expect(input2.prop('value')).toEqual('40');
 
@@ -47,12 +62,20 @@ describe('TwoInputs component', function () {
     input1Click(twoInputs, "105");
 
     //then
-    expect(actions.twoInputsChange).toHaveBeenCalledWith('105', '40')
+    expect(twoInputsChangeSpy).toHaveBeenCalledWith('105', '40')
   });
 
   it('should handle input2 change', function () {
     //given
-    const twoInputs = mount(<TwoInputs {...twoInputsTestData}/>);
+    const twoInputsChangeSpy = jest.fn();
+    const twoInputs = mount(
+      <TwoInputs
+        valueOne={twoInputsComponentTestData.valueOne}
+        valueTwo={twoInputsComponentTestData.valueTwo}
+        isResultMod10={twoInputsComponentTestData.isResultMod10}
+        actions={{twoInputsChange: twoInputsChangeSpy}}
+      />
+    );
     const input1 = twoInputs.find('input.input1');
     expect(input1.prop('value')).toEqual('123');
 
@@ -60,15 +83,23 @@ describe('TwoInputs component', function () {
     input2Click(twoInputs, "200");
 
     //then
-    expect(actions.twoInputsChange).toHaveBeenCalledWith('123', '200')
+    expect(twoInputsChangeSpy).toHaveBeenCalledWith('123', '200')
   });
 
   it('should be render if result mod 10', function () {
     //given
+    const twoInputsChangeSpy = jest.fn();
     const isResultMod10 = true;
 
     //when
-    const twoInputs = mount(<TwoInputs {...twoInputsTestData} isResultMod10={isResultMod10}/>);
+    const twoInputs = mount(
+      <TwoInputs
+        valueOne={twoInputsComponentTestData.valueOne}
+        valueTwo={twoInputsComponentTestData.valueTwo}
+        isResultMod10={isResultMod10}
+        actions={{twoInputsChange: twoInputsChangeSpy}}
+      />
+    );
     const greenTwoInputs = twoInputs.find('.background-color-green');
 
     //then
