@@ -26,7 +26,45 @@ describe('TwoBars component', function () {
 
     //then
     expect(wrapper.find('BarContent .value1').text()).toBe('' + twoBarsComponentData.valueOne);
+    expect(wrapper.find('BarContent .value1').prop('style').width).toBe(twoBarsComponentData.valueOne);
     expect(wrapper.find('BarContent .value2').text()).toBe('' + twoBarsComponentData.valueTwo);
+    expect(wrapper.find('BarContent .value2').prop('style').width).toBe(twoBarsComponentData.valueTwo);
+  });
+
+  it('should be rendered for NaN', function () {
+    //when
+    const twoBarsClickSpy = jest.fn();
+    const wrapper = mount(
+      <TwoBars
+        valueOne={NaN}
+        valueTwo={NaN}
+        actions={{twoBarsClick: twoBarsClickSpy}}
+      />
+    );
+
+    //then
+    expect(wrapper.find('BarContent .value1').text()).toBe('');
+    expect(wrapper.find('BarContent .value1').prop('style').width).toBe(0);
+    expect(wrapper.find('BarContent .value2').text()).toBe('');
+    expect(wrapper.find('BarContent .value2').prop('style').width).toBe(0);
+  });
+
+  it('should be rendered for negative value', function () {
+    //when
+    const twoBarsClickSpy = jest.fn();
+    const wrapper = mount(
+      <TwoBars
+        valueOne={-40}
+        valueTwo={-60}
+        actions={{twoBarsClick: twoBarsClickSpy}}
+      />
+    );
+
+    //then
+    expect(wrapper.find('BarContent .value1').text()).toBe('');
+    expect(wrapper.find('BarContent .value1').prop('style').width).toBe(0);
+    expect(wrapper.find('BarContent .value2').text()).toBe('');
+    expect(wrapper.find('BarContent .value2').prop('style').width).toBe(0);
   });
 
   it('should handle left bar click', function () {
