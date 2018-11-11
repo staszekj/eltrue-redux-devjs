@@ -19,7 +19,7 @@ const MainApp = props => {
         className="header-value-2">{valueTwoAsString}</span>&nbsp;=&nbsp;
         <span className="header-value-result">{resultAsString}</span>
       </div>
-      <div className="body">
+      <div className="main">
         <TwoBars
           valueOne={valueOne}
           valueTwo={valueTwo}
