@@ -19,13 +19,31 @@ describe('Main container', function () {
     );
 
     //when
-    input1Change(wrapper, 150);
-    input2Change(wrapper, 50);
+    input1Change(wrapper, '150');
+    input2Change(wrapper, '50');
 
     //then
     expect(wrapper.find('span.header-value-1').text()).toBe('150');
     expect(wrapper.find('span.header-value-2').text()).toBe('50');
     expect(wrapper.find('span.header-value-result').text()).toBe('200');
+  });
+
+  it('should render header if no value', function () {
+    //given
+    const wrapper = mount(
+      <Provider store={create(reduxTestData)}>
+        <MainApp/>
+      </Provider>
+    );
+
+    //when
+    input1Change(wrapper, '');
+    input2Change(wrapper, '');
+
+    //then
+    expect(wrapper.find('span.header-value-1').text()).toBe('_');
+    expect(wrapper.find('span.header-value-2').text()).toBe('_');
+    expect(wrapper.find('span.header-value-result').text()).toBe('_');
   });
 
   it('should handle left bar click', function (done) {
