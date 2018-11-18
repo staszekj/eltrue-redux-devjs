@@ -1,11 +1,21 @@
 export const TWO_INPUTS_CHANGE = 'TWO_INPUTS/change';
+export const TWO_INPUTS_CHANGE_DELAYED = 'TWO_INPUTS/changeDelayed';
 
-const convertToString = val => val + '';
+const convertToString = val => val.toString();
 
 // Action Creators
 export const twoInputsChange = (valueOne, valueTwo) =>
   ({
     type: TWO_INPUTS_CHANGE,
+    payload: {
+      valueOne: valueOne,
+      valueTwo: valueTwo
+    }
+  });
+
+export const twoInputsChangedDelayed = (valueOne, valueTwo) =>
+  ({
+    type: TWO_INPUTS_CHANGE_DELAYED,
     payload: {
       valueOne: convertToString(valueOne),
       valueTwo: convertToString(valueTwo)
@@ -26,6 +36,7 @@ export const initState = {
 // Reducer
 export default (state = initState, action) => {
   switch (action.type) {
+    case TWO_INPUTS_CHANGE_DELAYED:
     case TWO_INPUTS_CHANGE:
       return {
         ...state,

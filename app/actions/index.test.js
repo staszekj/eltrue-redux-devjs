@@ -1,6 +1,6 @@
 import {twoBarsClick, LEFT_BAR, RIGHT_BAR, INC_VALUE} from './index'
 import reduxTestData from './index.test.data'
-import {TWO_INPUTS_CHANGE} from "app/redux/two-inputs";
+import {TWO_INPUTS_CHANGE_DELAYED} from "app/redux/two-inputs";
 
 describe('Actions', function () {
   it('should create action object for leftClick', function (done) {
@@ -21,7 +21,7 @@ describe('Actions', function () {
             "valueOne": expectedValueOne,
             "valueTwo": expectedValueTwo
           },
-        "type": TWO_INPUTS_CHANGE
+        "type": TWO_INPUTS_CHANGE_DELAYED
       });
       done();
     }, 600);
@@ -45,7 +45,7 @@ describe('Actions', function () {
             "valueOne": expectedValueOne,
             "valueTwo": expectedValueTwo
           },
-        "type": TWO_INPUTS_CHANGE
+        "type": TWO_INPUTS_CHANGE_DELAYED
       });
       done();
     }, 600);
