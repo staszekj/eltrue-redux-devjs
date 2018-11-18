@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     actions: {
-      twoInputsChange: (valueOne, valueTwo, result) => dispatch(twoInputsChange(valueOne, valueTwo, result))
+      twoInputsChange: (valueOne, valueTwo) => dispatch(twoInputsChange(valueOne, valueTwo))
     }
   }
 };
