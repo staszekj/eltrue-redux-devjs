@@ -8,8 +8,8 @@ export const twoInputsChange = (valueOne, valueTwo) =>
   ({
     type: TWO_INPUTS_CHANGE,
     payload: {
-      valueOne: valueOne,
-      valueTwo: valueTwo
+      valueOne,
+      valueTwo
     }
   });
 
