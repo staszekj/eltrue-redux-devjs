@@ -17,3 +17,7 @@
 #### 2016
 * [10 Tips for Better Redux Architecture, 2016](https://medium.com/javascript-scene/10-tips-for-better-redux-architecture-69250425af44)
 * [React Redux best practices](https://github.com/Salesfloor/architecture/wiki/React-Redux-best-practices)
+#### Other libraries
+* [Reselect](https://github.com/reduxjs/reselect)
+* [ImmutableJS](https://facebook.github.io/immutable-js/)
+

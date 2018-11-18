@@ -14,17 +14,17 @@ const MainApp = props => {
 
   return (
     <div className="main-app">
-      <div className="header">
-        <span className="header-value-1">{valueOneAsString}</span>&nbsp;+&nbsp;<span
-        className="header-value-2">{valueTwoAsString}</span>&nbsp;=&nbsp;
-        <span className="header-value-result">{resultAsString}</span>
-      </div>
+      {/*<div className="header">*/}
+      {/*<span className="header-value-1">{valueOneAsString}</span>&nbsp;+&nbsp;<span*/}
+      {/*className="header-value-2">{valueTwoAsString}</span>&nbsp;=&nbsp;*/}
+      {/*<span className="header-value-result">{resultAsString}</span>*/}
+      {/*</div>*/}
       <div className="main">
-        <TwoBars
-          valueOne={valueOne}
-          valueTwo={valueTwo}
-          actions={actions}
-        />
+        {/*<TwoBars*/}
+        {/*valueOne={valueOne}*/}
+        {/*valueTwo={valueTwo}*/}
+        {/*actions={actions}*/}
+        {/*/>*/}
         <TwoInputs/>
       </div>
 
