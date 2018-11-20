@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {LEFT_BAR, RIGHT_BAR} from "app/actions";
 
 export const MAX_VALUE = 300;
-export const TOO_BIG_DATA_MESSAGE = `Sum bigger than ${MAX_VALUE} is not supported.`;
+export const TOO_BIG_DATA_MESSAGE = `Bigger than ${MAX_VALUE}. Please buy Premium Version.`;
 
 const isBarTooBig = (barOneWidth, barTwoWidth) => barOneWidth + barTwoWidth > MAX_VALUE;
 
