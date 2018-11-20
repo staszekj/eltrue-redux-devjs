@@ -20,4 +20,5 @@
 #### Other libraries
 * [Reselect](https://github.com/reduxjs/reselect)
 * [ImmutableJS](https://facebook.github.io/immutable-js/)
+* [Redux-Act](https://github.com/pauldijou/redux-act)
 
